@@ -1,13 +1,32 @@
 from flask import Flask, render_template, request, jsonify
 import json
 import re
-from difflib import SequenceMatcher
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
 app = Flask(__name__)
 
 # Load FAQs
 with open("data/faqs.json", "r") as file:
     faqs = json.load(file)
+
+
+# Text preprocessing
+def preprocess(text):
+    text = text.lower()
+    text = re.sub(r"[^\w\s]", "", text)
+    return text
+
+
+# Prepare FAQ questions
+faq_questions = [
+    preprocess(faq["question"])
+    for faq in faqs
+]
+
+# Create TF-IDF vectors
+vectorizer = TfidfVectorizer()
+faq_vectors = vectorizer.fit_transform(faq_questions)
 
 
 @app.route("/")
@@ -17,47 +36,28 @@ def home():
 
 @app.route("/ask", methods=["POST"])
 def ask():
-    user_question = request.json["question"].lower()
+    user_question = request.json["question"]
 
-    # Remove punctuation
-    user_question = re.sub(r"[^\w\s]", "", user_question)
+    # Preprocess user question
+    user_question = preprocess(user_question)
 
-    best_match = None
-    best_score = 0
+    # Convert user question into TF-IDF vector
+    user_vector = vectorizer.transform([user_question])
 
-    for faq in faqs:
-        faq_question = faq["question"].lower()
-        faq_question = re.sub(r"[^\w\s]", "", faq_question)
+    # Calculate cosine similarity
+    similarities = cosine_similarity(
+        user_vector,
+        faq_vectors
+    )[0]
 
-        # Similarity score
-        similarity = SequenceMatcher(
-            None,
-            user_question,
-            faq_question
-        ).ratio()
+    # Find best matching FAQ
+    best_index = similarities.argmax()
+    best_score = similarities[best_index]
 
-        # Compare common words
-        user_words = set(user_question.split())
-        faq_words = set(faq_question.split())
-
-        common_words = user_words.intersection(faq_words)
-
-        if len(user_words) > 0:
-            word_score = len(common_words) / len(user_words)
-        else:
-            word_score = 0
-
-        # Combined score
-        score = (similarity * 0.5) + (word_score * 0.5)
-
-        if score > best_score:
-            best_score = score
-            best_match = faq
-
-    # Accept the best match if confidence is good enough
-    if best_match and best_score >= 0.35:
+    # Confidence threshold
+    if best_score >= 0.25:
         return jsonify({
-            "answer": best_match["answer"]
+            "answer": faqs[best_index]["answer"]
         })
 
     return jsonify({
@@ -65,5 +65,5 @@ def ask():
     })
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     app.run(debug=True)
