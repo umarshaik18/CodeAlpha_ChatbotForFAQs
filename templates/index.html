@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> GPREC FAQ Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <div class="chat-header">
+            🤖 GPREC FAQS Chatbot
+            <p>Ask me your questions!</p>
+        </div>
+
+        <div id="chat-box" class="chat-box">
+            <div class="bot-message">
+                Hello! 👋 I'm your GPREC FAQ chatbot. How can I help you?
+            </div>
+        </div>
+
+        <div class="input-area">
+            <input
+                type="text"
+                id="user-input"
+                placeholder="Type your question..."
+                onkeypress="handleKeyPress(event)"
+            >
+
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>

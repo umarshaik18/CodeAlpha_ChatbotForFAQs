@@ -1,0 +1,39 @@
+[
+  
+   {
+    "question": "What is the college name?",
+    "answer": "G.Pulla Reddy Engineering College."
+  },
+  {
+    "question":"who is the founder of the pulla reddy college?",
+    "answer":"G.Pulla Reddy is the founder of the college."
+  },
+  {
+    "question":"where is the college location?",
+    "answer":"The college located in Kurnool near Tandrapadhu."
+  },
+  {
+    "question":"what is the specialities of the college?",
+    "answer":"good facalties and seperate hostels for boys and girls, college consists of playground and gymnasium."
+  },
+  {
+    "question": "What courses are available?",
+    "answer": "The college offers various engineering and technology courses."
+  },
+  {
+    "question":"what are the college timings?",
+    "answer":"The college timings are from 9 AM to 5 Pm ,Monday to Friday."
+  },
+  {
+    "question": "What is AI and ML?",
+    "answer": "AI means Artificial Intelligence and ML means Machine Learning. They are technologies used to make computers learn and perform intelligent tasks."
+  },
+  {
+    "question": "How can I contact the college?",
+    "answer": "You can contact the college through its official website or college office."
+  },
+  {
+    "question": "What is this chatbot?",
+    "answer": "This is an FAQ chatbot designed to answer frequently asked questions."
+  }
+]
