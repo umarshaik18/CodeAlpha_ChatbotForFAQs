@@ -5,6 +5,7 @@ The goal of this project is to develop an FAQ chatbot that understands user ques
 
 ## Author 
 Umar Shaik
+<p>
 GitHub: @umarshaik18
 
 ## Features
@@ -36,6 +37,7 @@ The chatbot uses *Cosine Similarity* to compare the user's question with the ava
 3. Install the required libraries:
 ```bash
    pip install flask, NLTK, scikit-learn.
+<p>
 4.Run the application : python app.py
 5.Open the local URL shown in the terminal.
 
