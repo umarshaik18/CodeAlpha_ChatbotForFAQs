@@ -37,7 +37,7 @@ The chatbot uses *Cosine Similarity* to compare the user's question with the ava
 3. Install the required libraries:
 ```bash
    pip install flask, NLTK, scikit-learn.
-<p>
+
 4.Run the application : python app.py
 5.Open the local URL shown in the terminal.
 
