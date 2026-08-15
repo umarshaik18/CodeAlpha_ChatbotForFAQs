@@ -1,0 +1,3 @@
+Flask
+NLTK
+scikit-learn
