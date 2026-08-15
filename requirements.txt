@@ -1,3 +1,4 @@
 Flask
 NLTK
 scikit-learn
+gunicorn
