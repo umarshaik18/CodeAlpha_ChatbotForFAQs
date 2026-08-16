@@ -1,15 +1,15 @@
 [
   
    {
-    "question": "college name?",
+    "question": "name?",
     "answer": "G.Pulla Reddy Engineering College."
   },
   {
-    "question":"founder?",
+    "question":"founder or creater ?",
     "answer":"G.Pulla Reddy is the founder of the college."
   },
   {
-    "question":"college location?",
+    "question":"location or located?",
     "answer":"The college located in Kurnool near Tandrapadhu."
   },
   {
@@ -17,11 +17,11 @@
     "answer":"good facalties and seperate hostels for boys and girls, college consists of playground and gymnasium."
   },
   {
-    "question": "courses are available?",
+    "question": "courses?",
     "answer": "The college offers various engineering and technology courses."
   },
   {
-    "question":" timings?",
+    "question":" timings or time ?",
     "answer":"The college timings are from 9 AM to 5 Pm ,Monday to Friday."
   },
   {
@@ -29,7 +29,7 @@
     "answer": "AI means Artificial Intelligence and ML means Machine Learning. They are technologies used to make computers learn and perform intelligent tasks."
   },
   {
-    "question": "contact the college?",
+    "question": "contact?",
     "answer": "You can contact the college through its official website or college office."
   },
   {
