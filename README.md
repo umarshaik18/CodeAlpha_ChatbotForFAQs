@@ -1,9 +1,19 @@
 # Chatbot for FAQs
+
 ## Live Demo
 [Click here to try the FAQs chatbot]
 <p>
 Public link:https://codealpha-chatbotforfaqs-1.onrender.com
 
+## Screenshots
+![FAQ Chatbot Screenshot 1]
+<p>
+(Screenshot%202026-08-16%20145207.png)
+<p>
+![FAQ Chatbot Screenshot 2]
+<p>
+(Screenshot%202026-08-16%20145349.png)
+  
 ## Project Goal
 The goal of this project is to develop an FAQ chatbot that understands user questions and provides the most relevant answers from a predefined FAQ dataset.
 
